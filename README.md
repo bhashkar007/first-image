@@ -16,7 +16,7 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require bhashkar007/first-image
+        composer require by/first-image
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for First Image.
 ## Using First Image
