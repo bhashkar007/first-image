@@ -31,4 +31,4 @@ or
     
 This will output the source of the first image found, which then can be used in `<img>` tag.
 
-Brought to you by [Bhashkar Yadav](http://sidd3.com)
+Brought to you by [Bhashkar Yadav](https://360adaptive.com)

@@ -1,8 +1,8 @@
 {
     "name": "by/first-image",
-    "description": "A plugin to get first image from Redactor Field.",
+    "description": "A plugin to get first image from Redactor Field.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "keywords": [
         "craft",
         "cms",
@@ -18,7 +18,7 @@
     "authors": [
         {
             "name": "Bhashkar Yadav",
-            "homepage": "http://sidd3.com"
+            "homepage": "https://360adaptive.com"
         }
     ],
     "require": {
