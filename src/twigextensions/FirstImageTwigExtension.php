@@ -1,10 +1,10 @@
 <?php
 /**
- * First Image plugin for Craft CMS 3.x
+ * First Image plugin for Craft CMS 4.x
  *
- * A plugin to get first image from Redactor Field.
+ * A plugin to get first image from Redactor Field.
  *
- * @link      http://sidd3.com
+ * @link      https://360adaptive.com
  * @copyright Copyright (c) 2018 Bhashkar Yadav
  */
 
@@ -18,9 +18,9 @@ use Craft;
 /**
  * @author    Bhashkar Yadav
  * @package   FirstImage
- * @since     1.0.0
+ * @since     2.0.0
  */
-class FirstImageTwigExtension extends \Twig_Extension
+class FirstImageTwigExtension extends \Twig\Extension\AbstractExtension
 {
     // Public Methods
     // =========================================================================
@@ -39,7 +39,7 @@ class FirstImageTwigExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('getFirstImage', [$this, 'get_first_image']),
+            new \Twig\TwigFilter('getFirstImage', [$this, 'get_first_image']),
         ];
     }
 
@@ -49,7 +49,7 @@ class FirstImageTwigExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('getFirstImage', [$this, 'get_first_image']),
+            new \Twig\TwigFunction('getFirstImage', [$this, 'get_first_image']),
         ];
     }
  
