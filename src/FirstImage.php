@@ -1,83 +1,36 @@
 <?php
 /**
- * First Image plugin for Craft CMS 4.x
+ * First Image plugin for Craft CMS 5.x
  *
- * A plugin to get first image from Redactor Field.
+ * Get the first image from a rich text (Redactor / CKEditor) field.
  *
- * @link      https://360adaptive.com
- * @copyright Copyright (c) 2018 Bhashkar Yadav
+ * @link      https://uxi360.com
  */
 
-namespace by\firstimage;
-
-use by\firstimage\twigextensions\FirstImageTwigExtension;
+namespace uxi360\firstimage;
 
 use Craft;
 use craft\base\Plugin;
-use craft\services\Plugins;
-use craft\events\PluginEvent;
-
-use yii\base\Event;
+use uxi360\firstimage\twigextensions\FirstImageTwigExtension;
 
 /**
- * Class FirstImage
- *
- * @author    Bhashkar Yadav
- * @package   FirstImage
- * @since     2.0.0
- *
+ * @author    UXI360 Team
+ * @since     3.0.0
  */
 class FirstImage extends Plugin
 {
-    // Static Properties
-    // =========================================================================
-
     /**
-     * @var FirstImage
-     */
-    public static $plugin;
-
-    // Public Properties
-    // =========================================================================
-
-    /**
-     * @var string
+     * @inheritdoc
      */
     public string $schemaVersion = '1.0.0';
-
-    // Public Methods
-    // =========================================================================
 
     /**
      * @inheritdoc
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
-        self::$plugin = $this;
 
-        Craft::$app->view->registerTwigExtension(new FirstImageTwigExtension());
-
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                }
-            }
-        );
-
-        Craft::info(
-            Craft::t(
-                'first-image',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
+        Craft::$app->getView()->registerTwigExtension(new FirstImageTwigExtension());
     }
-
-    // Protected Methods
-    // =========================================================================
-
 }
